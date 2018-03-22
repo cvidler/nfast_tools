@@ -16,6 +16,8 @@ if [ $? -ne 0 ]; then
 	echo "FATAL: Couldn't query NFast keys"
 	exit 1
 fi
+NFAST_KEYS=`echo $NFAST_KEYS | grep -e "local" -A 1 -e "Name" | grep -ve "--" -ve "AppName" `
+echo "[$NFAST_KEYS]"
 
 RTM_KEYS=`sudo rcmd show ssldecr keys`
 if [ $? -ne 0 ]; then
