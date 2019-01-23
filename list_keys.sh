@@ -11,7 +11,7 @@ fi
 
 OLDDIR=`pwd`
 cd $NFASTDIR
-NFAST_KEYS=`sudo ./bin/kmfile_dump ./kmdata/local/key_pkcs11_*`
+NFAST_KEYS=`sudo ./bin/kmfile-dump ./kmdata/local/key_pkcs11_*`
 if [ $? -ne 0 ]; then
 	echo "FATAL: Couldn't query NFast keys"
 	exit 1
